@@ -3,14 +3,11 @@ Debugging and networking troubleshooting tools
 ### Commands
 
 
+man 
 
-man
 ping
+
 ss
+
 netstat
 
-
-
-
-
-Fix some errors
