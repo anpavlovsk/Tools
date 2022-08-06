@@ -99,7 +99,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 0.0.0.0         172.31.16.1     0.0.0.0         UG    0      0        0 eth0
 172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
 172.31.16.0     0.0.0.0         255.255.240.0   U     0      0        0 eth0
-```
+````
 
 ### wget
 The wget command is primarily used to fetch web pages.
@@ -197,21 +197,22 @@ LISTEN     0      50                     :::53285                   :::*
 ````
 List all established
 To list all the established ports, use the state established flag as shown below.
-
+````
 ss -t -r state established
+````
 To list all sockets in listening state,
-
+````
 ss -t -r state listening
-
-traceroute
+````
+### traceroute
 If you do not have a traceroute utility in your system or server, you can install it from the native repository.
 
 traceroute is a network troubleshooting utility. Using traceroute you can find the number of hops required for a particular packet to reach the destination.
 
 For example,
-
+````
 traceroute google.com
-
+````
 mtr
 The mtr utility is a network diagnostic tool to troubleshoot the network bottlenecks. It combines the functionality of both ping and traceroute
 
