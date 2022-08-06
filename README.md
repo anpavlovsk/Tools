@@ -18,11 +18,10 @@ host google.com
 The ping networking utility is used to check if the remote server is reachable or not. It is primarily used for checking the connectivity and troubleshooting the network.
 
 It provides the following details.
-
-Bytes sent and received
-Packets sent, received, and lost
-Approximate round-trip time (in milliseconds)
-Ping command has the following syntax.
+Bytes sent and received 
+Packets sent, received, and lost 
+Approximate round-trip time (in milliseconds) 
+Ping command has the following syntax. 
 
 ping <IP or DNS>
 For example,
@@ -37,21 +36,23 @@ If you want to limit the ping output without using ctrl+c, then you can use the 
 ````
 ping -c 3 google.com
 ````
-curl
+### curl
 Curl utility is primarily used to transfer data from or to a server. However, you can use it for network troubleshooting.
 
 For network troubleshooting, curl supports protocols such as DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP
 
 For example, curl can check connectivity on port 22 using telnet.
-
+````
 curl -v telnet://192.168.33.10:22
+````
 You can check the FTP connectivity using curl.
-
-curl ftp://ftptest.net 
+````
+curl ftp://ftptest.net
+````
 You can troubleshoot web server connectivity as well.
-
+````
 curl http://google.com -I
-
+````
 nc (netcat)
 The nc (netcat) command is known as the swiss army of networking commands.
 
