@@ -335,3 +335,7 @@ or
 ps -eo pmem,pid,user,args | sort -k 1 -r | head -10
 ps -eo pmem,pid,user,args | sort -r -k1 | less
 ````
+The following command shows USERNAME, CPU%, MEMORY%, and the number of processes running. Run this command on a single line:
+````
+ps aux | awk '{cpu[$1]+=$3; mem[$1]+=$4; procs[$1]+=1} END { for (user in cpu){ print user,"cpu:",cpu[user],"mem:",mem[user],"proc:",procs[user] } }'
+````
