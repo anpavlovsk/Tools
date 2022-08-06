@@ -53,48 +53,52 @@ You can troubleshoot web server connectivity as well.
 ````
 curl http://google.com -I
 ````
-nc (netcat)
+### nc (netcat)
 The nc (netcat) command is known as the swiss army of networking commands.
 
 Using nc, you can check the connectivity of a service running on a specific port.
 
 For example, to check if ssh port is open, you can use the following command.
-
+````
 nc -v -n 192.168.33.10 22
+````
 netcat can also be used for data transfer over TCP/UDP and port scanning.
 
 Port scanning is not recommended in cloud environments. You need to request the cloud provider to perform port scanning operations in your environment.
 
-telnet
+### telnet
 The telnet command is used to troubleshoot the TCP connections on a port.
 
 To check port connectivity using telnet, use the following command.
-
+````
 telnet 10.4.5.5 22
-
-route
+````
+### route
 The “route” command is used to get the details of the route table for your system and to manipulate it. Let us look at a few examples for the route command.
 
 Listing all routes
 Execute the “route” command without any arguments to list all the existing routes in your system or server.
-
-ubuntu@devopscube:~$ route
+````
+route
+````
+````
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 default         ip-172-31-16-1. 0.0.0.0         UG    0      0        0 eth0
 172.17.0.0      *               255.255.0.0     U     0      0        0 docker0
 172.31.16.0     *               255.255.240.0   U     0      0        0 eth0
-ubuntu@devopscube:~$
+````
 If you want to get the full output in numerical form without any hostname, you can use “-n” flag with the route  command.
-
-ubuntu@devopscube:~$ route -n
+````
+route -n
+````
+````
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 0.0.0.0         172.31.16.1     0.0.0.0         UG    0      0        0 eth0
 172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
 172.31.16.0     0.0.0.0         255.255.240.0   U     0      0        0 eth0
-ubuntu@devopscube:~$
-
+```
 
 wget
 The wget command is primarily used to fetch web pages.
