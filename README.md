@@ -213,19 +213,19 @@ For example,
 ````
 traceroute google.com
 ````
-mtr
+### mtr
 The mtr utility is a network diagnostic tool to troubleshoot the network bottlenecks. It combines the functionality of both ping and traceroute
 
 For example, the following command shows the traceroute output in real-time.
-
+````
 mtr google.com
-
-mtr report
+````
+### mtr report
 You can generate a report using the –report flag. When you run the mtr report, it sends 10 packets to the destination and creates the report.
-
+````
 mtr -n --report google.com
-
-dig
+````
+### dig
 If you have any task related to DNS lookup, you can use “dig” command to query the DNS name servers.
 
 Get all DNS records with dig
