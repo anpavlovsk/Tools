@@ -307,29 +307,13 @@ htop [-dChusv]
 ````
 Options:
 
--d –delay : Used to show the delay between updates, in tenths of seconds. 
--C –no-color –no-colour : Start htop in monochrome mode.  
--h –help : Used to display the help message and exit. 
--u –user=USERNAME : Used to show only the processes of a given user. 
--p –pid=PID, PID… : Used to show only the given PIDs. 
--s –sort-key COLUMN : Sort by this column (use –sort-key help for a column list). 
--v –version : Output version information and exit. 
+- d –delay : Used to show the delay between updates, in tenths of seconds. 
+- C –no-color –no-colour : Start htop in monochrome mode.  
+- h –help : Used to display the help message and exit. 
+- u –user=USERNAME : Used to show only the processes of a given user. 
+- p –pid=PID, PID… : Used to show only the given PIDs. 
+- s –sort-key COLUMN : Sort by this column (use –sort-key help for a column list). 
+- v –version : Output version information and exit. 
 ````
 htop -u username
 ````
-Interactive Commands:
-
-Arrows, Page Up, Page Down, Home, End: Scroll the process list. 
-Space: Tag or untag a process. 
-U – Untag all processes (remove all tags added with the Space key). 
-s – Trace process system calls. 
-F1 – Help 
-F2 – setup 
-F3 – search 
-F4 – filtering: type in part of a process command line and only processes whose names match will be shown. 
-F5 – Tree view. 
-F6 – Sorting. 
-F7 – Increase the selected process’s priority. This can only be done by the superuser. 
-F8 – Decrease the selected process’s priority. 
-F9 – Kill process. 
-F10 – Quit. 
