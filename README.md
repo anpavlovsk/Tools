@@ -3,16 +3,17 @@ Debugging and networking troubleshooting tools
 ### Commands
 
 
-host
+### host
 Host command is for the reverse lookup of IP or a DNS name.
 
 For example, If you want to find a DNS attached with an IP you can use the host commands as follows.
-
+```
 host 8.8.8.8
+````
 You can also do the reverse to find the IP address associated with the domain name. For example,
-
+````
 host google.com
-
+```
 ping
 The ping networking utility is used to check if the remote server is reachable or not. It is primarily used for checking the connectivity and troubleshooting the network.
 
