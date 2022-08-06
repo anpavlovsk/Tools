@@ -278,3 +278,30 @@ https://www.youtube.com/watch?v=AVXYq8aL47Q&ab_channel=Linode
 https://github.com/kodekloudhub/linux-basics-course/blob/master/docs/07-Networking/04-Troubleshooting.md
 
 https://devopscube.com/list-linux-networking-troubleshooting-and-commands-beginners/
+### Top
+Display and update information about the top CPU processes
+Useful top options
+
+If you're looking only for the processes started by a specific user, you can get that information with the -u option:
+````
+top -u 'username'
+````
+To get a list of idle processes on your system, use the -i option:
+````
+top -i
+````
+You can set the update interval to an arbitrary value in seconds. The default value is three seconds. Change it to five like this:
+````
+top -d 5
+````
+You can also run top on a timer. For instance, the following command sets the number of iterations to two and then exits:
+```
+$ top -n 2
+````
+Locate a process with top
+
+Press Shift+L to locate a process by name. This creates a prompt just above the bold table header line. Type in the name of the process you're looking for and then press Enter or Return to see the instances of that process highlighted in the newly sorted process list.
+
+Stopping a process with top
+
+You can stop or "kill" a running process with top, too. First, find the process you want to stop using either Shift+L or pgrep. Next, press K and enter the process ID you want to stop. The default value is whatever is at the top of the list, so be sure to enter the PID you want to stop before pressing Enter, or you may stop a process you didn't intend to.
