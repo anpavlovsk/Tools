@@ -272,12 +272,6 @@ nslookup -type=any google.com
 ````
 Similarly, you can query for records like mx, soa etc
 
-some usefull linux commands
-https://www.youtube.com/watch?v=AVXYq8aL47Q&ab_channel=Linode
-
-https://github.com/kodekloudhub/linux-basics-course/blob/master/docs/07-Networking/04-Troubleshooting.md
-
-https://devopscube.com/list-linux-networking-troubleshooting-and-commands-beginners/
 ### Top
 Display and update information about the top CPU processes
 Useful top options
@@ -305,3 +299,37 @@ Press Shift+L to locate a process by name. This creates a prompt just above the 
 Stopping a process with top
 
 You can stop or "kill" a running process with top, too. First, find the process you want to stop using either Shift+L or pgrep. Next, press K and enter the process ID you want to stop. The default value is whatever is at the top of the list, so be sure to enter the PID you want to stop before pressing Enter, or you may stop a process you didn't intend to.
+
+### Htop
+htop command in Linux system is a command line utility that allows the user to interactively monitor the system’s vital resources or server’s processes in real time. 
+````
+htop [-dChusv]
+````
+Options:
+
+-d –delay : Used to show the delay between updates, in tenths of seconds.
+-C –no-color –no-colour : Start htop in monochrome mode.
+-h –help : Used to display the help message and exit.
+-u –user=USERNAME : Used to show only the processes of a given user.
+-p –pid=PID, PID… : Used to show only the given PIDs.
+-s –sort-key COLUMN : Sort by this column (use –sort-key help for a column list).
+-v –version : Output version information and exit.
+````
+htop -u username
+````
+Interactive Commands:
+
+Arrows, Page Up, Page Down, Home, End: Scroll the process list.
+Space: Tag or untag a process.
+U – Untag all processes (remove all tags added with the Space key).
+s – Trace process system calls.
+F1 – Help
+F2 – setup
+F3 – search
+F4 – filtering: type in part of a process command line and only processes whose names match will be shown.
+F5 – Tree view.
+F6 – Sorting.
+F7 – Increase the selected process’s priority. This can only be done by the superuser.
+F8 – Decrease the selected process’s priority.
+F9 – Kill process.
+F10 – Quit.
