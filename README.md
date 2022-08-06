@@ -230,39 +230,46 @@ If you have any task related to DNS lookup, you can use “dig” command to que
 
 Get all DNS records with dig
 The following command returns all the DNS records and TTL information of a twitter.com
-
+````
 dig twiter.com ANY
+````
 all DNS records with dig
 Use +short to get the output without verbose.
-
+````
 dig google.com ANY +short
+````
 Get Specific DNS Record with dig
 For example, If you want to get the A record for the particular domain name, you can use the dig command. +short will provide the information without verbose
-
+````
 dig www.google.com A +short
+````
 Similarly, you can get the other record information separately using the following commands.
-
+````
 dig google.com CNAME +short
 dig google.com MX +short
 dig google.com TXT +short
 dig google.com NS +short
+````
 Reverse DNS Lookup with dig
 You can perform a reverse DNS lookup with dig using the following command. Replace 8.8.8.8 with the required IP
-
+````
 dig -x 8.8.8.8
-
-nslookup
+````
+### nslookup
 Nslookup (Name Server Lookup) utility is used to check the DNS entries. It is similar to dig command.
 
 To check the DNS records of a domain, you can use the following command.
-
+````
 nslookup google.com
+````
 You can also do a reverse lookup with the IP address.
-
+````
 nslookup 8.8.8.8
+````
 To get all the DNS records of a domain name, you can use the following.
-
+````
 nslookup -type=any google.com
+````
 Similarly, you can query for records like mx, soa etc
 
 some usefull linux commands
