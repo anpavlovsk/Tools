@@ -1,3 +1,4 @@
+
 # Tools
 Debugging and networking troubleshooting tools
 ### Commands
@@ -100,38 +101,43 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 172.31.16.0     0.0.0.0         255.255.240.0   U     0      0        0 eth0
 ```
 
-wget
+### wget
 The wget command is primarily used to fetch web pages.
 
 You can use wget to troubleshoot network issues as well.
 
 For example, you can troubleshoot proxy server connections using wget.
-
+````
 wget -e use_proxy=yes http_proxy=<proxy_host:port> http://externalsite.com
+````
 You can check if a website is up by fetching the files.
-
+````
 wget www.google.com
-
-ip (ifconfig)
+````
+### ip (ifconfig)
 ip command is used to display and manipulate routes and network interfaces. ip command is the newer version of ifconfig. ifconfig works in all the systems, but it is better to use ip command instead of ifconfig.
 
 Let’s have a look at a few examples of ip command.
 
 Display network devices and configuration
+````
 ip addr
+````
 You can use this command with pipes and grep to get more granular output like the IP address of the eth0 interface. It is very useful when you work on automation tools that require IP to be fetched dynamically.
 
 The following command gets the IP address of eth0 network interface.
-
+````
 ip a | grep eth0  | grep "inet" | awk -F" " '{print $2}'
+````
 Get details of a specific interface
-
+````
 ip a show eth0
+````
 You can list the routing tables.
-
+````
 ip route
 ip route list
-
+````
 arp
 ARP (Address Resolution Protocol) shows the cache table of local networks’ IP addresses and MAC addresses that the system interacted with.
 
