@@ -67,6 +67,34 @@ netcat can also be used for data transfer over TCP/UDP and port scanning.
 
 Port scanning is not recommended in cloud environments. You need to request the cloud provider to perform port scanning operations in your environment.
 
+ ### nmap
+ Nmap is a useful tool for troubleshooting networks by detecting open ports, the OS version, routes between servers, and much more.
+ Now, run Nmap on our gateway IP:
+````
+sudo nmap -sn <Your-IP>
+````
+Determine this host's OS with the -O switch:
+````
+sudo nmap -O <Your-IP>
+````
+Then, run the following to check the common 2000 ports, which handle the common TCP and UDP services. Here, -Pn is used to skip the ping scan after assuming that the host is up:
+````
+sudo nmap -sS -sU -PN <Your-IP>
+````
+Note: The -Pn combo is also useful for checking if the host firewall is blocking ICMP requests or not.
+Also, as an extension to the above command, if you need to scan all ports instead of only the 2000 ports, you can use the following to scan ports from 1-66535:
+````
+sudo nmap -sS -sU -PN -p 1-65535 <Your-IP>
+````
+You can also scan only for TCP ports (default 1000) by using the following:
+````
+sudo nmap -sT <Your-IP>
+````
+Now, after all of these checks, you can also perform the "all" aggressive scans with the -A option, which tells Nmap to perform OS and version checking using -T4 as a timing template that tells Nmap how fast to perform this scan 
+````
+sudo nmap -A -T4 <Your-IP> 
+````
+  
 ### telnet
 The telnet command is used to troubleshoot the TCP connections on a port.
 
