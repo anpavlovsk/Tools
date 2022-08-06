@@ -317,3 +317,21 @@ Options:
 ````
 htop -u username
 ````
+### Ps
+One command you could use to troubleshoot is ps. The ps command helps you keep track of your Memory and CPU usage.
+
+For example, if you're using a VPS machine and start to notice that your memory usage went from 60MB to 250MB a day, you should probably take a close look at what is going on behind the scenes.
+
+The following describes various commands that help you pin point high memory usage and high CPU usage.
+  
+Displaying the top ten processes
+The following four commands display the top ten (10) processes that are using memory:
+````
+ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10
+ps -eo pcpu,pid,user,args | sort -r -k1 | less
+````
+or
+````
+ps -eo pmem,pid,user,args | sort -k 1 -r | head -10
+ps -eo pmem,pid,user,args | sort -r -k1 | less
+````
