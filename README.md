@@ -7,14 +7,14 @@ Debugging and networking troubleshooting tools
 Host command is for the reverse lookup of IP or a DNS name.
 
 For example, If you want to find a DNS attached with an IP you can use the host commands as follows.
-```
+````
 host 8.8.8.8
 ````
 You can also do the reverse to find the IP address associated with the domain name. For example,
 ````
 host google.com
-```
-ping
+````
+### ping
 The ping networking utility is used to check if the remote server is reachable or not. It is primarily used for checking the connectivity and troubleshooting the network.
 
 It provides the following details.
@@ -26,15 +26,17 @@ Ping command has the following syntax.
 
 ping <IP or DNS>
 For example,
-
-ping devopscube.com
+````
+ping google.com
+````
 To ping IP address
-
+````
 ping 8.8.8.8
+````
 If you want to limit the ping output without using ctrl+c, then you can use the “-c” flag with a number as shown below.
-
+````
 ping -c 3 google.com
-
+````
 curl
 Curl utility is primarily used to transfer data from or to a server. However, you can use it for network troubleshooting.
 
