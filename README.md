@@ -138,31 +138,20 @@ You can list the routing tables.
 ip route
 ip route list
 ````
-arp
+### arp
 ARP (Address Resolution Protocol) shows the cache table of local networks’ IP addresses and MAC addresses that the system interacted with.
-
+````
 arp
+````
 Example output,
-
-vagrant@dcubelab:~$ arp
+````
 Address                  HWtype  HWaddress           Flags Mask            Iface
 10.0.2.3                 ether   52:54:00:12:35:03   C                     eth0
 192.168.33.1             ether   0a:00:27:00:00:00   C                     eth1
 10.0.2.2                 ether   52:54:00:12:35:02   C                     eth0
+````
 
-arp
-ARP (Address Resolution Protocol) shows the cache table of local networks’ IP addresses and MAC addresses that the system interacted with.
-
-arp
-Example output,
-
-vagrant@dcubelab:~$ arp
-Address                  HWtype  HWaddress           Flags Mask            Iface
-10.0.2.3                 ether   52:54:00:12:35:03   C                     eth0
-192.168.33.1             ether   0a:00:27:00:00:00   C                     eth1
-10.0.2.2                 ether   52:54:00:12:35:02   C                     eth0
-
-ss (netstat)
+### ss (netstat)
 The ss command is a replacement for netstat. You can still use the netstat command on all systems.
 
 Using ss command, you can get more information than netstat command. ss command is fast because it gets all the information from the kernel userspace.
@@ -171,33 +160,41 @@ Now let’s have a look at a few usages of ss command.
 
 Listing all connections
 The “ss” command will list all the TCP, UDP, and Unix socket connections on your machine.
-
-ubuntu@devopscube:~$ ss
-Netid  State      Recv-Q Send-Q   Local Address:Port       Peer Address:Port
-u_str  ESTAB      0      0                    * 7594                  * 0
-u_str  ESTAB      0      0      @/com/ubuntu/upstart 7605                  * 0  
-u_str  ESTAB      0      0                    * 29701                 * 0
-u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 29702                 * 0
-tcp    ESTAB      0      400      172.31.18.184:ssh         1.22.167.31:61808
+````
+ss
+````
+Example output,
+````
+Netid  State      Recv-Q Send-Q   Local Address:Port      		 Peer Address:Port
+u_str  ESTAB      0      0                    * 7594            	      * 0
+u_str  ESTAB      0      0      @/com/ubuntu/upstart 7605      		      * 0  
+u_str  ESTAB      0      0                    * 29701			      * 0
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 29702         * 0
+tcp    ESTAB      0      400      172.31.18.184:ssh        		 1.22.167.31:61808
+````
 The output of the ss command will be big so you can use ” ss | less ” command to make the output scrollable.
 
 Filtering out TCP, UDP and Unix sockets
 If you want to filter out TCP , UDP or UNIX socket details, use “-t” “-u” and “-x” flag with the “ss” command. It will show all the established connections to the specific ports. If you want to list both connected and listening ports using “a” with the specific flag as shown below.
-
+````
 ss -ta
 ss -ua
 ss -xa
+````
 List all listening ports
 To list all the listening ports, use “-l” flag with ss command. To list specific TCP, UDP or UNIX socket, use “-t”, “-u” and “-x” flag with “-l” as shown below.
-
-ubuntu@devopscube:~$ ss -lt
+````
+ss -lt
+````
+Example output,
+````
 State      Recv-Q Send-Q      Local Address:Port          Peer Address:Port
 LISTEN     0      128                     *:ssh                      *:*
 LISTEN     0      50                     :::http-alt                 :::*
 LISTEN     0      50                     :::55857                   :::*
 LISTEN     0      128                    :::ssh                     :::*
 LISTEN     0      50                     :::53285                   :::*
-ubuntu@devopscube:~$
+````
 List all established
 To list all the established ports, use the state established flag as shown below.
 
