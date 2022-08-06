@@ -339,3 +339,19 @@ The following command shows USERNAME, CPU%, MEMORY%, and the number of processes
 ````
 ps aux | awk '{cpu[$1]+=$3; mem[$1]+=$4; procs[$1]+=1} END { for (user in cpu){ print user,"cpu:",cpu[user],"mem:",mem[user],"proc:",procs[user] } }'
 ````
+Displaying memory usage with /proc/meminfo
+````
+ps aux --sort pmem
+````
+To display all currently running processes and detailed information, use the following command:
+````
+ps -ef
+````
+and on most systems:
+````
+ps -aux
+````
+You can find a memory leak by running:
+````
+ps ev --pid=[HighestEnterPID]
+````
